@@ -13,9 +13,14 @@ def publish(channel, msg):
     return channel, msg
 
 
-def subscribe(channel, fn):
-    message = 'shiva msg from sample2'
-    function = fn
+def subscribe(channel):
+    sock = socket.socket()
+    port = 8777
+    host = socket.gethostname()
+    sock.connect((host,port))
+    while True:
+        sock.send(channel)
+        message = sock.recv(1024)
     for message in channel:
-        function(message)
-    return function(message)
+        msg = message
+    return msg
