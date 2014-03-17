@@ -4,12 +4,11 @@ sys.path.append('C:/Users/Shiva/PycharmProjects/sample2')
 import sample2
 channel = 'my_channel'
 message = ''
-fn = 'subscribe'
 
-def subscribe(channel, fn):
-    sample2.subscribe(channel, fn)
+def subscribe(channel):
+    sample2.subscribe(channel)
     return message
 
 
-fn = subscribe(channel, fn)
+fn = subscribe(channel)
 print message
