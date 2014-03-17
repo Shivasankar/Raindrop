@@ -11,7 +11,10 @@ def socketconnect():
     while True:
         c, addr = s.accept()
         channel = c.recv(1024)
-        #message = c.recv(1024)
+        message = c.recv(1024)
+        if message is None:
+            while True:
+                c.send(channel)
         print channel
         print msg
         dict = {channel: msg}
