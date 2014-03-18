@@ -1,14 +1,9 @@
 import sys
 
-sys.path.append('C:/Users/Shiva/PycharmProjects/sample2')
-import sample2
-channel = 'my_channel'
-message = ''
-
-def subscribe(channel):
-    sample2.subscribe(channel)
-    return message
+sys.path.append('C:/Users/Shiva/PycharmProjects/Raindrop')
+import raindrop
 
 
-fn = subscribe(channel)
-print message
+def display(message):
+    print message
+raindrop.subscribe('mychannel', display)
